@@ -45,7 +45,7 @@ void loop() {
     Serial.print(sensorValue);                       
   }
   
-  //add a carriage return
+  //add a carriage return at line end
   Serial.println();
 
   // wait 10 seconds before the next loop
