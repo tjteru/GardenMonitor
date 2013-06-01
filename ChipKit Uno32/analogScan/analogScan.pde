@@ -20,9 +20,11 @@ const int analogInPinEnd = A11;  // Analog input pin that the potentiometer is a
 const int millisPerSecond = 1000;
  
 int sensorValue;
+float voltage;
 int interval = 10; // number of seconds between samples
 unsigned long count = 0L;
 unsigned long tiggerTime;
+
 
 void setup() {
   // initialize serial communications at 9600 bps:
@@ -39,10 +41,11 @@ void loop() {
   // cycle through the inputs and read the analog in values:
   for (int i = 0; i <= (analogInPinEnd - analogInPinStart); i++ ) {
     sensorValue = analogRead(analogInPinStart + i);  
+    voltage = mapfloat(sensorValue, 0, 1023, 0.0, 5.0); 
     
     //add each value to the comma delimited line
     Serial.print( ", " );
-    Serial.print(sensorValue);                       
+    Serial.print(voltage);                       
   }
   
   //add a carriage return at line end
@@ -56,4 +59,10 @@ void loop() {
   delay((tiggerTime + (interval * millisPerSecond)) - millis());  
   tiggerTime = millis();  
     
+}
+
+// Map an int value to a floating point value 
+float mapfloat(long x, long in_min, long in_max, long out_min, long out_max)
+{
+  return (float)(x - in_min) * (out_max - out_min) / (float)(in_max - in_min) + out_min;
 }
