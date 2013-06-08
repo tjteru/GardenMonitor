@@ -1,4 +1,4 @@
-c#
+#!/usr/bin/python
 #
 #
 #
@@ -10,7 +10,7 @@ import time, datetime
 import serial
 
 
-f = open('log.csv','a', 0)
+f = open('/home/pi/GardenMonitor/BeagleBone/log.csv','a', 0)
 ser = serial.Serial('/dev/ttyUSB0', 115200)
 ser.flush()
 
