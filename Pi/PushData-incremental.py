@@ -8,11 +8,6 @@
 '''
  PushData-incremental.py
 
-=======
-'''
- PushData-incremental.py
-
->>>>>>> 8327f232b911969d2b57fffbf75dc579678fa5cf
  created 7 June, 2013
  Modified 7 June, 2013
  by Erik Meike (erik [at] tribeawsome [dot] com)
@@ -24,12 +19,8 @@
 from time import sleep
 import csv
 import MySQLdb
-<<<<<<< HEAD
-import os, sys, inspect
 
 
-=======
->>>>>>> 8327f232b911969d2b57fffbf75dc579678fa5cf
 from localInfo import *
 
 import tail
@@ -58,21 +49,7 @@ t = tail.Tail(logfile)
 
 t.register_callback(insertData)
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-hst, usr, passwd, db = readLocalInfo()
 
->>>>>>> 8327f232b911969d2b57fffbf75dc579678fa5cf
-=======
-hst, usr, passwd, db = readLocalInfo()
-
->>>>>>> 8327f232b911969d2b57fffbf75dc579678fa5cf
-=======
-hst, usr, passwd, db = readLocalInfo()
-
->>>>>>> 8327f232b911969d2b57fffbf75dc579678fa5cf
 mydb = MySQLdb.connect(host=hst,
                        user=usr,
                        passwd=passwd,
