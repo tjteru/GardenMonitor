@@ -3,12 +3,25 @@
 # Uses library from https://github.com/kasun/python-tail
 #
 #
-#
-#
 
+'''
+ PushData-incremental.py
+
+ created 7 June, 2013
+ Modified 7 June, 2013
+ by Erik Meike (erik [at] tribeawsome [dot] com)
+ 
+ This code is in the public domain.  I hereby grant a nonexclusive worldwide
+ license to use this code for any purpose.  No warranty expressed or implied.
+
+'''
 from time import sleep
 import csv
 import MySQLdb
+import os, sys, inspect
+
+
+from localInfo import *
 
 import tail
 
@@ -32,14 +45,24 @@ def insertData(text):
     print "Done"
 
 
-t = tail.Tail('../log.csv')
+t = tail.Tail(logfile)
 
 t.register_callback(insertData)
 
-mydb = MySQLdb.connect(host='host',
-                       user='user',
-                       passwd='password',
-                       db='database')
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+hst, usr, passwd, db = readLocalInfo()
+
+>>>>>>> 8327f232b911969d2b57fffbf75dc579678fa5cf
+=======
+hst, usr, passwd, db = readLocalInfo()
+
+>>>>>>> 8327f232b911969d2b57fffbf75dc579678fa5cf
+mydb = MySQLdb.connect(host=hst,
+                       user=usr,
+                       passwd=passwd,
+                       db=dbase)
 cursor = mydb.cursor()
 
 t.follow(s=5)

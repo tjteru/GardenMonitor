@@ -2,20 +2,29 @@
 #
 #
 #
-#
-#
-#
+'''
+ PushData-bruteForce.py
+
+ created 7 June, 2013
+ Modified 7 June, 2013
+ by Erik Meike (erik [at] tribeawsome [dot] com)
+ 
+ This code is in the public domain.  I hereby grant a nonexclusive worldwide
+ license to use this code for any purpose.  No warranty expressed or implied.
+
+'''
 
 import csv
 import MySQLdb
+from localInfo import *
 
-mydb = MySQLdb.connect(host='host',
-                       user='user',
-                       passwd='password',
-                       db='database')
+mydb = MySQLdb.connect(host=hst,
+                       user=usr,
+                       passwd=passwd,
+                       db=dbase)
 cursor = mydb.cursor()
 
-csv_data = csv.reader(file('../log.csv'))
+csv_data = csv.reader(file(logfile))
 
 numrows = 0
 numerrors = 0
