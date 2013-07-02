@@ -6,7 +6,7 @@ echo "WARNING: This is currently broken... Do not use.  Hit control+c within the
 
 sleep 5
 
-echo "Continuing..."
+echo "Continuing... You were warned."
 
 sleep 2
 
