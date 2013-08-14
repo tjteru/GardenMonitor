@@ -1,0 +1,6 @@
+To use:
+1. Download the jquery javascript library, and copy all the files into the "js" folder.  (http://jquery.com/download/)
+2. Download a copy of the HighStocks graphing library, and copy all the files into the "js" folder.  (http://www.highcharts.com/download)
+3. Set the username, password, and database for your MySQL connection in "getdata.php".
+4. Copy folder onto a php enabled web server.  
+
