@@ -1,2 +1,3 @@
 .DS_Store
 Web Interface/js/*
+auth.h
